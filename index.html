@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mainApp">
+<html lang="en" ng-app="myApp">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +22,10 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <!-- Anagular JavaScript -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,7 +35,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" >
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -89,9 +92,6 @@
                                 <span class="name">Sam Pan</span>
                                 <span class="skills">MSEE, Mixed Signal, Sys. Integration, Consumer Electronics, Asia Manufacturing</span>
                             <hr class="star-light">
-                            <div ng-controller="StatsController as statsCtrl">
-                                {{"test"+" angular"}}
-                            </div>
                         </div>
                     </div>
                     <!--  <img class="img-responsive" src="img/profile.png" alt="">  -->
@@ -105,7 +105,12 @@
             </div>
         </div>
     </header>
-
+    {{'test'+' hi'}}
+<!--     <div ng-app ng-controller="StatsController as statsCtrl">
+        {{statsCtrl.cityVisited}}
+        {{statsCtrl.test}}
+    </div> -->
+ 
     <!-- About Section -->
     <section class="success" id="about">
         <div class="container">
@@ -137,14 +142,15 @@
         </div>
     </section>
 
-    <section id="stats">
+    <section id="stats" ng-controller="StatsController as statsCtrl">
             <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-left">
-                    <h2>Stats</h2>
-                    <!-- <hr class="star-light"> -->
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <h2>Stats</h2>
+                        <!-- <hr class="star-light"> -->
+                        <p>Visited {{statsCtrl.visitedCities}} cities, and {{statsCtrl.visitedVenus}} venus.</p>
+                    </div>
                 </div>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
     </section>
@@ -573,11 +579,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
-
-    <!-- Anagular JavaScript -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/app.js"></script>
-
 </body>
 
 </html>

@@ -1,21 +1,21 @@
 (function(){
-	var app = angular.module('mainApp' []);
-
-	app.controller('StatsController', function()
-	{
-
+	var app = angular.module('myApp', []);
+	
+	var data = {
+		city: 0,
+		venu: 0,
+	};
+	
+	app.controller('StatsController', function() {
+		this.visitedCities = data.city;
+		this.visitedVenus = data.venu;
 	});
 
 	// Custom element 
-	var app.directive('title', function(){
-		return {
-			restrict: 'E';
-			templateUrl: 'product-title.html';
-		}
-	})
-
-	var stats = {
-		cityVisited = 0;
-	}
-
-})
+	// var app.directive('title', function(){
+	// 	return {
+	// 		restrict: 'E';
+	// 		templateUrl: 'product-title.html';
+	// 	}
+	// })
+})();
